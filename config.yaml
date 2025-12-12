@@ -1,0 +1,100 @@
+mode: TEST
+trading_env: TESTNET
+trade_type: SPOT
+leverage: 1
+max_pairs_concurrent: 6
+max_orders_per_pair: 4
+max_order_value: 50.0
+max_pair_exposure: 500.0
+pause_between_orders_sec: 30
+sl_percent: 1.5
+tp_percent: 3.0
+target_profit_per_order: 1.0
+max_loss_per_trade_percent: 1.2
+losing_streak_freeze_threshold: 3
+mode_signal: AI
+# Actualización: refresco en tiempo real por defecto
+refresh_interval: RT
+indicators:
+  RSI:
+    period: 14
+    buy_below: 30
+    sell_above: 70
+    enable_buy: true
+    enable_sell: true
+  MACD:
+    fast: 12
+    slow: 26
+    signal: 9
+    enable_buy: false
+    enable_sell: false
+  EMA:
+    short: 12
+    long: 26
+    enable_buy: false
+    enable_sell: false
+  FLAGS:
+    short: 9
+    long: 21
+    enable_buy: false
+    enable_sell: false
+signals:
+  RSI:
+    buy: true
+    sell: true
+  MACD:
+    buy: false
+    sell: false
+  EMA:
+    buy: false
+    sell: false
+  FLAGS:
+    buy: false
+    sell: false
+pairs:
+  BTCUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+  ETHUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+  XRPUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+  BNBUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+  ADAUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+  SOLUSDT:
+    sl_percent: 1.5
+    tp_percent: 3.0
+    max_loss_per_trade_percent: 1.2
+    max_order_usdt: 50.0
+    max_total_usdt: 500.0
+email_alerts:
+  enabled: true
+  smtp_host: smtp.example.com
+  smtp_port: 587
+  user: alerts@example.com
+  from: alerts@example.com
+  to:
+  - me@example.com
+candle_interval: 5min
+font_size: Medio

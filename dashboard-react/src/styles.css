@@ -1,0 +1,45 @@
+:root {
+  --bg: #0f1115;
+  --panel: #151922;
+  --muted: #8a90a0;
+  --text: #e7ecf3;
+  --accent: #4cc38a;
+  --danger: #ef5f5f;
+  --border: #232838;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+
+.layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar { background: #0b0d12; border-right: 1px solid var(--border); padding: 16px; }
+.brand { font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; }
+.sidebar nav a { display:block; padding:10px 8px; margin:4px 0; border-radius:6px; color: var(--text); text-decoration:none; }
+.sidebar nav a.active, .sidebar nav a:hover { background: #1a2030; }
+
+.content { padding: 20px; }
+.header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 16px; }
+.header button { background: var(--panel); color: var(--text); border:1px solid var(--border); border-radius:8px; padding:8px 12px; cursor:pointer; }
+.header button:hover { background:#1a2030; }
+
+.grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+@media (min-width: 900px) { .grid { grid-template-columns: 1fr 2fr; } }
+
+.card { background: var(--panel); border:1px solid var(--border); border-radius:12px; }
+.card__title { padding:12px 14px; border-bottom:1px solid var(--border); font-weight:600; }
+.card__body { padding:14px; }
+
+.status { font-size: 24px; font-weight: 700; color: var(--accent); }
+.muted { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+.table-wrap { overflow:auto; }
+table { width:100%; border-collapse: collapse; }
+th, td { padding:10px 8px; border-bottom:1px solid var(--border); text-align:left; }
+th { color: var(--muted); font-weight:600; }
+.alert { background:#2a1214; border:1px solid #5a1b1f; color:#ffb4b4; padding:10px 12px; border-radius:8px; margin-bottom:14px; }
+
+.kpis { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom: 16px; }
+.kpi { background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px; }
+.kpi__label { color: var(--muted); font-size:12px; margin-bottom:4px; }
+.kpi__value { font-size:20px; font-weight:700; }
+
